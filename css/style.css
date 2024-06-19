@@ -280,8 +280,6 @@
   font-weight: 400;
   font-size: 13px;
   color: #333;
-  padding-left: 20px;
-  border-left: 1px solid #999;
 }
 
 .advert-item__info{
@@ -324,6 +322,7 @@
   font-size: 17px;
   color: #333;
   margin-bottom: 5px;
+  line-height: 14px;
 }
 
 .advert-price-list{
@@ -472,6 +471,7 @@
   align-items: center;
   padding: 23px 20px;
   gap: 92px;
+  background: #fafafa;
 }
 
 .advert-stats__title{
@@ -715,7 +715,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .advert-item__row{
     flex-direction: column;
     gap: 20px;
@@ -1047,6 +1047,8 @@
 }
 
 .product-advert-check{
+  display: flex;
+  align-items: center;
   flex-shrink: 0;
 }
 
@@ -1054,7 +1056,7 @@
   display: none;
 }
 
-.product-advert-check label{
+.product-advert-check .all-product-label{
   position: relative;
   display: block;
   width: 21px;
@@ -1066,7 +1068,7 @@
   cursor: pointer;
 }
 
-.product-advert-check label:before{
+.product-advert-check .all-product-label:before{
   position: absolute;
   content: "";
   top: -1px;
@@ -1078,12 +1080,12 @@
   opacity: 0;
 }
 
-.product-advert-check input:checked + label{
+.product-advert-check input:checked + .all-product-label{
   background: #ed1c24;
   border: 1px solid #ed1c24;
 }
 
-.product-advert-check input:checked + label:before{
+.product-advert-check input:checked + .all-product-label:before{
   opacity: 1;
 }
 
@@ -1349,6 +1351,14 @@
   width: 213px;
 }
 
+.all-product-text{
+  display: none;
+  font-weight: 400;
+  font-size: 14px;
+  color: #666;
+  padding-left: 14px;
+}
+
 @media (max-width: 1379px) {
   .product-block{
     flex-direction: column;
@@ -1371,7 +1381,13 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1300px) {
+  .product-block .btn-info-update {
+    display: flex;
+  }
+}
+
+@media (max-width: 767px) {
   .product-update{
     flex-direction: column;
     align-items: flex-start;
@@ -1392,7 +1408,7 @@
     padding: 46px 15px 15px 10px;
   }
 
-  .advert-data__day{
+  .product-advert__item .advert-data__day{
     position: absolute;
     top: 15px;
     left: 46px;
@@ -1470,5 +1486,23 @@
     padding-bottom: 7px;
     border: 1px solid #f3f3f3;
     border-bottom: none;
+  }
+
+  .all-product-text{
+    display: block;
+  }
+
+  .btn-inner{
+   order: 1;
+  }
+
+  .product-advert .advert-btn-post,
+  .product-advert .advert-btn-up,
+  .product-advert .advert-btn-pause{
+    order: 3;
+  }
+
+  .product-advert__item{
+    gap: 15px;
   }
 }
